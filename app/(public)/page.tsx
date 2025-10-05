@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <Button>click me</Button>
       <ModeToggle></ModeToggle>
+      <h3>HIII</h3>
     </>
   );
 }
