@@ -100,7 +100,7 @@ const FAQSection= () => {
         <div className="lg:col-span-4">
           <h2 className="text-5xl font-extrabold mb-12 leading-tight">
             Got Questions? <br />
-            We've got Answers
+            Weve got Answers
           </h2>
 
           {/* Service List */}

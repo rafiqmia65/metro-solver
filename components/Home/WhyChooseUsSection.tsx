@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image"; // Optional icon for button
 
 const WhyChooseUsSection = () => {
   // Feature cards data with custom rotation and relative positioning for the right half
@@ -35,7 +34,7 @@ const WhyChooseUsSection = () => {
   return (
     <section className="bg-[#0e0c24] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
-        {/* বাম দিকের কন্টেন্ট (টেক্সট এবং বাটন) */}
+        {/* Left side content (text and button) */}
         <div className="md:w-1/2 text-center md:text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
             Why You Choose <br /> Metro Solver?
@@ -52,10 +51,10 @@ const WhyChooseUsSection = () => {
           </button>
         </div>
 
-        {/* ডান দিকের ফিচার কার্ডস (Absolute Positioning ব্যবহার করে) */}
-        {/* কন্টেইনারটিকে একটি নির্দিষ্ট উচ্চতা (h-96) এবং 'relative' পজিশন দেওয়া হয়েছে */}
+        {/* Right side feature cards (using absolute positioning) */}
+        {/* The container has a fixed height (h-[450px]) and relative positioning */}
         <div className="md:w-1/2 relative h-[450px] w-full mt-16 md:mt-0">
-          {/* একটি কেন্দ্রীয় এলিমেন্ট যা অন্যান্য কার্ডের জন্য একটি ফোকাস পয়েন্ট হিসাবে কাজ করে */}
+          {/* A central element to act as a focal point for the other cards */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-56 h-56 bg-purple-900/30 rounded-full blur-3xl opacity-50"></div>
           </div>
@@ -63,11 +62,11 @@ const WhyChooseUsSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              // 'absolute' পজিশন এবং 'transform' ক্লাস ব্যবহার করা হয়েছে
+              // Using 'absolute' positioning and 'transform' classes
               className={`absolute px-8 py-4 rounded-full text-white font-semibold text-lg whitespace-nowrap shadow-xl transition-all duration-300 ${feature.bgColor} ${feature.rotate} ${feature.pos}`}
               style={{
-                // মাঝখানে রাখার জন্য কাস্টম অফসেট
-                transform: `translate(${index % 2 === 0 ? "-50%" : "50%"}, 0)`, // বাম/ডান অফসেট
+                // Custom offset to slightly shift cards left or right
+                transform: `translate(${index % 2 === 0 ? "-50%" : "50%"}, 0)`,
               }}
             >
               {feature.text}

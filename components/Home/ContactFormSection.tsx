@@ -1,15 +1,12 @@
 "use client";
-
 import React from "react";
 import {
   Send,
-  Mail,
-  Phone,
   Facebook,
   Twitter,
   Linkedin,
   Instagram,
-  ChevronDown, // Used for select dropdown icon
+  ChevronDown,
 } from "lucide-react";
 
 // Social Icons Data
@@ -20,7 +17,7 @@ const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
 ];
 
-const ContactFormSection: React.FC = () => {
+const ContactFormSection = () => {
   // Common Tailwind style for input/select fields - Adjusted for better purple contrast
   const inputClasses =
     "w-full bg-transparent border-b border-purple-700 focus:border-purple-500 focus:ring-0 text-white placeholder-purple-400/70 py-3 px-0 transition duration-300 focus:outline-none";
@@ -54,7 +51,7 @@ const ContactFormSection: React.FC = () => {
               Still Have A Questions?
             </h2>
             <p className="text-purple-300/80 mb-10">
-              We're here to help. Reach out to us using the form or connect
+              Were here to help. Reach out to us using the form or connect
               through our social channels.
             </p>
 

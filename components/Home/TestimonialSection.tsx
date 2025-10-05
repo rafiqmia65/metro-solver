@@ -32,7 +32,7 @@ const testimonials = [
     name: "Alex W.",
     role: "Founder of Company B",
     quote:
-      "The team's dedication and expertise are unmatched. They delivered a custom solution that perfectly met our complex needs on a tight deadline.",
+      "The teams dedication and expertise are unmatched. They delivered a custom solution that perfectly met our complex needs on a tight deadline.",
     rating: 5,
     color: "text-green-400",
     bgColor:
@@ -58,7 +58,7 @@ const TestimonialSection: React.FC = () => {
         What People Say
       </h2>
       <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
-        See how we've helped others achieve their goals. Their success is our
+        See how weve helped others achieve their goals. Their success is our
         success.
       </p>
 
@@ -87,7 +87,7 @@ const TestimonialSection: React.FC = () => {
                 </p>
               </div>
             </div>
-            <p className="text-gray-300 italic mb-4 text-sm">"{t.quote}"</p>
+            <p className="text-gray-300 italic mb-4 text-sm">{t.quote}</p>
             <p className={`font-semibold text-xs ${t.color}`}>
               - {t.name}, {t.role}
             </p>
