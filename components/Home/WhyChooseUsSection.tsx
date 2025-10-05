@@ -1,29 +1,41 @@
 "use client";
 
 import React from "react";
-import Image from "next/image"; // If your "Book Now" button has an image icon
+import Image from "next/image"; // Optional icon for button
 
 const WhyChooseUsSection = () => {
-  // Data for the feature cards on the right side
+  // Feature cards data with custom rotation and relative positioning for the right half
   const features = [
-    { text: "Cancel Anytime", bgColor: "bg-[#1a1835]", rotate: "-rotate-6" },
+    {
+      text: "Cancel Anytime",
+      bgColor: "bg-[#1a1835]",
+      rotate: "-rotate-6",
+      pos: "top-0 md:top-10 right-0 md:right-20",
+    },
     {
       text: "24/7 Customer Service",
       bgColor: "bg-purple-800",
       rotate: "rotate-3",
+      pos: "top-20 md:top-40 left-0 md:left-5",
     },
-    { text: "Refers & Earn", bgColor: "bg-[#1a1835]", rotate: "-rotate-3" },
+    {
+      text: "Refers & Earn",
+      bgColor: "bg-[#1a1835]",
+      rotate: "-rotate-3",
+      pos: "bottom-20 md:bottom-20 right-0 md:right-10",
+    },
     {
       text: "Money Back Guarantee",
       bgColor: "bg-[#1a1835]",
       rotate: "rotate-6",
+      pos: "bottom-0 md:bottom-0 left-0 md:left-28",
     },
   ];
 
   return (
     <section className="bg-[#0e0c24] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
-        {/* Left side content (text and button) */}
+        {/* বাম দিকের কন্টেন্ট (টেক্সট এবং বাটন) */}
         <div className="md:w-1/2 text-center md:text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
             Why You Choose <br /> Metro Solver?
@@ -34,43 +46,33 @@ const WhyChooseUsSection = () => {
             effortless and comfortable with our assistance.
           </p>
           <button className="flex items-center justify-center space-x-2 bg-purple-700 hover:bg-purple-800 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-purple-900/50">
-            {/* Optional icon/image for the "Book Now" button */}
+            {/* Optional icon */}
             {/* <Image src="/path/to/icon.png" alt="Book Now Icon" width={20} height={20} /> */}
             <span>Book Now</span>
           </button>
         </div>
 
-        {/* Right side feature cards */}
-        <div className="md:w-1/2 relative flex flex-col items-center justify-center space-y-8">
+        {/* ডান দিকের ফিচার কার্ডস (Absolute Positioning ব্যবহার করে) */}
+        {/* কন্টেইনারটিকে একটি নির্দিষ্ট উচ্চতা (h-96) এবং 'relative' পজিশন দেওয়া হয়েছে */}
+        <div className="md:w-1/2 relative h-[450px] w-full mt-16 md:mt-0">
+          {/* একটি কেন্দ্রীয় এলিমেন্ট যা অন্যান্য কার্ডের জন্য একটি ফোকাস পয়েন্ট হিসাবে কাজ করে */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-56 h-56 bg-purple-900/30 rounded-full blur-3xl opacity-50"></div>
+          </div>
+
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`absolute px-8 py-4 rounded-full text-white font-semibold text-lg whitespace-nowrap shadow-lg transition-all duration-300 transform 
-                ${feature.bgColor} ${feature.rotate}
-                ${index === 0 ? "-top-10 md:-top-16 -left-10 md:left-20" : ""}
-                ${index === 1 ? "top-10 md:top-20 -right-10 md:right-0" : ""}
-                ${
-                  index === 2
-                    ? "bottom-20 md:bottom-20 -left-10 md:left-10"
-                    : ""
-                }
-                ${
-                  index === 3
-                    ? "-bottom-10 md:-bottom-16 right-0 md:right-20"
-                    : ""
-                }
-              `}
-              // You can use inline styles to set random positions and rotations
-              // However, using absolute with top/bottom/left/right is better for precise placement
-              style={{}}
+              // 'absolute' পজিশন এবং 'transform' ক্লাস ব্যবহার করা হয়েছে
+              className={`absolute px-8 py-4 rounded-full text-white font-semibold text-lg whitespace-nowrap shadow-xl transition-all duration-300 ${feature.bgColor} ${feature.rotate} ${feature.pos}`}
+              style={{
+                // মাঝখানে রাখার জন্য কাস্টম অফসেট
+                transform: `translate(${index % 2 === 0 ? "-50%" : "50%"}, 0)`, // বাম/ডান অফসেট
+              }}
             >
               {feature.text}
             </div>
           ))}
-          {/* A central element that can act as a reference point for other cards */}
-          <div className="w-48 h-48 bg-purple-900/30 rounded-full blur-2xl flex items-center justify-center text-white text-xl font-bold opacity-0">
-            {/* This div is only for reference and may not be visible */}
-          </div>
         </div>
       </div>
     </section>
