@@ -27,7 +27,7 @@ const ContactFormSection: React.FC = () => {
 
   return (
     <section className="bg-[#0f001f] text-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-r from-purple-800 to-[#0f001f] p-4 lg:p-10 border border-purple-900">
+      <div className="max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-2xl p-4 lg:p-10 border border-purple-900">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Side: Info & Branding - Enhanced Purple/Dark Gradient */}
           <div className="p-8 lg:p-12 rounded-2xl bg-gradient-to-br from-purple-900 to-gray-900 flex flex-col justify-center shadow-inner shadow-purple-900/50">

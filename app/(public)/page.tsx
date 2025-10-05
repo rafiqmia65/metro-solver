@@ -1,8 +1,11 @@
 import Banner from "@/components/Home/Banner";
 import BrandSection from "@/components/Home/BrandSection";
 import ContactFormSection from "@/components/Home/ContactFormSection";
+import FAQSection from "@/components/Home/FAQSection";
+import GlobalFooterSection from "@/components/Home/GlobalFooterSection";
 import HowItWorksSection from "@/components/Home/HowItWorksSection";
 import LatestWorksSection from "@/components/Home/LatestWorksSection";
+import NewsletterSection from "@/components/Home/NewsLetter";
 import PodcastSection from "@/components/Home/PodcastSection/PodcastSection";
 import ServicesSection from "@/components/Home/ServicesSection";
 import StatsSection from "@/components/Home/StatsSection";
@@ -24,6 +27,9 @@ export default function Home() {
       <TestimonialsAndBlog></TestimonialsAndBlog>
       <PodcastSection></PodcastSection>
       <ContactFormSection></ContactFormSection>
+      <FAQSection></FAQSection>
+      <GlobalFooterSection></GlobalFooterSection>
+      <NewsletterSection></NewsletterSection>
     </div>
   );
 }
